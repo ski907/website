@@ -3,31 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>NWS Sparkline</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      background: #111;
-      color: #ddd;
-      padding: 20px;
-    }
-
-    .sparkline-container {
-      width: 220px;
-    }
-
-    canvas {
-      width: 100%;
-      height: 40px;
-    }
-  </style>
 </head>
-<body>
+<body style="background:black; color:white;">
 
-  <h3>Burlington, VT – Temp Forecast</h3>
-  <div class="sparkline-container">
-    <canvas id="tempSpark"></canvas>
-  </div>
+<h3>Burlington, VT – Temp Forecast</h3>
 
-  <script src="sparkline.js" defer></script>
+<canvas id="tempSpark" width="220" height="40"></canvas>
+
+<script src="sparkline.js" defer></script>
 </body>
 </html>
