@@ -2,14 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NWS Sparkline</title>
+  <title>Forecast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      background: #111;
+      color: #ddd;
+      font-family: system-ui, sans-serif;
+      padding: 20px;
+    }
+
+    .spark-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .label {
+      width: 48px;
+      color: #aaa;
+    }
+
+    .range {
+      font-size: 0.8em;
+      color: #888;
+      width: 70px;
+      text-align: right;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .hint {
+      font-size: 0.7em;
+      color: #666;
+      margin-left: 58px;
+      margin-bottom: 12px;
+    }
+  </style>
 </head>
-<body style="background:black; color:white;">
+<body>
 
-<h3>Burlington, VT – Temp Forecast</h3>
+<h3>Temperature Forecast</h3>
 
-<canvas id="tempSpark" width="220" height="40"></canvas>
+<div class="spark-row"
+     data-grid="BTV/111,34"
+     data-label="BTV">
+  <span class="label">BTV</span>
+  <canvas width="220" height="40"></canvas>
+  <span class="range"></span>
+</div>
 
-<script src="sparkline.js" defer></script>
+<div class="spark-row"
+     data-grid="MPX/107,71"
+     data-label="MSP">
+  <span class="label">MSP</span>
+  <canvas width="220" height="40"></canvas>
+  <span class="range"></span>
+</div>
+
+<div class="hint">Next ~3 days (day/night)</div>
+
+<script src="sparklines.js" defer></script>
 </body>
 </html>
